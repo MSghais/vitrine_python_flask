@@ -1,0 +1,124 @@
+{% include 'base.html' %}
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="/static/css/style.css">
+      <link rel="stylesheet" href="/static/css/style_vitrine.css">
+
+
+</head>
+
+
+<main>
+
+<body>
+
+<div class="row ">
+   
+<!-- /////////////////////////////////PAGE CONTACT///////////////////////////////////// -->
+<div class="container-fluid backg backgContact ">
+<section id="contact" class="container" >
+<div class="row justify-content-center align-items-center">
+<div class="card col-lg-8 texture" style="padding:4rem">
+<h2 class="text-center">Nous contacter</h2>
+
+                        <form action="" method="POST">
+                                <div class="form-group">
+                                    <label for="nom">Indiquez votre nom:</label>
+                                    <input id="nom" type="text" class="form-control"name="con_nom" required placeholder="VOTRE NOM" maxlength="100">
+                                </div>
+
+                                <div class="form-group">    
+                                    <label for="con_email">Indiquez votre email:</label> 
+                                    <input id="con_email" type="email" class="form-control"name="con_email" required placeholder="VOTRE EMAIL" maxlength="100">
+                                </div>
+
+                                <div class="form-group">    
+                                    <label for="objet">Indiquez l'objet de votre message:</label> 
+                                    <input id="objet" class="form-control" type="text" name="con_sujet" required placeholder="Le sujet de votre demande" maxlength="100">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Votre message:</label>
+                                    <textarea id="email" class="form-control"required name="con_text" placeholder="VOTRE MESSAGE"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-success form-control">Envoyer</button>
+                                <!-- PARTIE TECHNIQUE -->
+                                <input type="hidden" name="identifiantFormulaire" value="contact-visiteur">
+                                <div class="feedback">
+                        </div>
+                    </form>
+
+                    
+</div>
+
+
+</div>
+</section>
+
+
+</section>
+        
+
+              
+
+
+
+
+</body>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+
+
+</html>
+
+
+
+{% extends 'footer.html' %}
+
+<script>
+
+/////////////////////JAVASCRIPT FONCTIONS COOKIES//////////////////////////////
+function setCookie(cname, cvalue, exdays) {
+var d = new Date();
+d.setTime(d.getTime() + (exdays*24*60*60*1000));
+var expires = "expires="+ d.toUTCString();
+document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}    
+
+function getCookie(cname) {
+var name = cname + "=";
+var decodedCookie = decodeURIComponent(document.cookie);
+var ca = decodedCookie.split(';');
+for(var i = 0; i <ca.length; i++) {
+var c = ca[i];
+while (c.charAt(0) == ' ') {
+c = c.substring(1);
+}
+if (c.indexOf(name) == 0) {
+return c.substring(name.length, c.length);
+}
+}
+return "";
+}
